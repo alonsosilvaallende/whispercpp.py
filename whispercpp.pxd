@@ -63,7 +63,7 @@ cdef extern from "whisper.h" nogil:
         int audio_ctx
         whisper_token* prompt_tokens
         int prompt_n_tokens
-        char* language
+        char* language = b'it'
         anon_2 greedy
         anon_3 beam_search
         whisper_new_segment_callback new_segment_callback
