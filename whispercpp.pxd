@@ -11,7 +11,7 @@ cdef nogil:
     int SAMPLE_RATE = 16000
     char* TEST_FILE = b'test.wav'
     char* DEFAULT_MODEL = b'ggml-tiny.bin'
-    char* language = b'it'
+    char* LANGUAGE = b'it'
     ctypedef struct audio_data:
         float* frames;
         int n_frames;
@@ -63,7 +63,7 @@ cdef extern from "whisper.h" nogil:
         int audio_ctx
         whisper_token* prompt_tokens
         int prompt_n_tokens
-        char* language = b'it'
+        char* language
         anon_2 greedy
         anon_3 beam_search
         whisper_new_segment_callback new_segment_callback
